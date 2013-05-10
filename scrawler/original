@@ -1,0 +1,91 @@
+http://simon700.blog.163.com/blog/static/30228542200974105652453/
+
+一个简单的python程序:得到网页中的所有连接(转)  
+
+2009-08-04 22:56:52|  分类： python技术 |字号 订阅
+
+#filename:URLLister.py
+
+from sgmllib import SGMLParser
+
+ 
+
+class URLLister(SGMLParser):        #注意这里的处理html的类是继承了SGMLParser类的。。。
+
+        def reset(self):
+
+                SGMLParser.reset(self)
+
+                self.urls = []
+
+ 
+
+        def start_a(self,attrs):        #这里的是找的所有的<a>标签。
+
+                href = [v for k,v in attrs if k=='href']                #这里的语法很特别，返回的是一个列表
+
+                if href:
+
+                        self.urls.extend(href)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#这是一个文件读取的类FileRead.py
+
+def readFile(filename):
+
+        data=""
+
+        #f=file("D:\书籍\linux\我的linux备份\新增\xinhua.htm")
+
+        f=file(filename)
+
+        while True:
+
+                line=f.readline()
+
+                if len(line)==0:
+
+                        break
+
+                data+=line
+
+        f.close()
+
+        return data
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#test_urllister.py
+
+from URLLister import URLLister                #里面有重要的关于网页的监听
+
+import urllib
+
+from FileRead import readFile       
+
+ 
+
+#usock= urllib.urlopen("http://www.baidu.com")                #因为好像禁止读取网络的数据，所以暂时使用静态文件进行测试
+
+ 
+
+parser=URLLister()                #这里是使用了一个关于网页文件内容的监听，查找到全部的<a>标签
+
+ 
+
+#parser.feed(usock.read())
+
+ 
+
+text=readFile(r"D:\书籍\linux\我的linux备份\新增\xinhua.htm")
+
+parser.feed(text)
+
+#usock.close()
+
+parser.close()
+
+for url in parser.urls:
+
+        print url
