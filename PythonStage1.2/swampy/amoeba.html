@@ -1,0 +1,107 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>Swampy: AmoebaWorld</title>
+</head><body fgcolor="#006600" bgcolor="#99ff99" link="#6600ff">
+
+<table cellpadding="20" width="600">
+
+<tbody><tr>
+
+<td>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+<h1>AmoebaWorld</h1>
+
+AmoebaWorld is used in <a href="http://web.archive.org/web/20080110204417/http://allendowney.com/ip04/">Introductory Programming</a> to
+provide practice writing Python expressions and to introduce
+object-oriented programming.
+
+Here is the <a href="http://web.archive.org/web/20080110204417/http://allendowney.com/ip04/hw02/hw02.html">first
+homework</a> that uses AmeobaWorld.  Students write Python expressions
+that evaluate parametric equations.  The Amoeba traces the resulting
+curves.  Here is an example showing the "slide", an Amoeba, and the
+control panel where students type expressions.
+
+<p>
+(This is just a screenshot, so don't bother pressing buttons!)
+</p><p>
+<img src="amoeba1.png">
+
+</p><p>
+In a <a href="http://web.archive.org/web/20080110204417/http://allendowney.com/ip04/hw10/hw10.html">later
+homework</a>, students write functions that allow the Amoebas to move
+toward each other, detect collisions, mate, and produce baby Amoebas.
+
+</p><p>
+Here is what a solution might look like after 200 steps:
+
+</p><p>
+<img src="amoeba2.png">
+
+
+</p><p>
+In this case there is no control panel, since the students are
+writing a program to control the Amoebas, rather than using the GUI.
+Here is some of the code from the solution:
+
+</p><p>
+</p><pre>def main(n=200):
+    world = AmoebaWorld()
+
+    # make the Amoebas
+    amy = make_amoeba(world, 'amy', 'pink')
+    bob = make_amoeba(world, 'bob', 'light blue')
+    pat = make_amoeba(world, 'pat', 'chartreuse')
+
+    amy.crush = bob
+    bob.crush = pat
+    pat.crush = amy
+    
+    # run the loop n times
+    for i in range(n):
+
+        # move the amoebas
+        for amoeba in world.animals:
+            move(amoeba)
+            nudge(amoeba, amoeba.crush)
+            check_collisions(amoeba, world)
+
+        # update the world and wait 0.1 seconds
+        world.update()
+        time.sleep(0.1)
+
+    # wait for the user to close the window
+    world.mainloop()
+
+# after all the function definitions, call main
+main()
+</pre>
+
+<p>
+This example uses some object-oriented features, but it is mostly
+written in a procedural style.  Introductory Programming focuses
+on basic programming skills and defers object-oriented design until
+Software Design.
+
+
+</p><p>
+<a href="http://web.archive.org/web/20080110204417/http://allendowney.com/swampy/index.html">
+Back to the Swampy Home Page</a>
+
+</p><center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+
+</td>
+</tr>
+</tbody></table>
+
+
+
+
+</body></html>

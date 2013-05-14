@@ -1,0 +1,4 @@
+#!/bin/bash
+dot -Tpng ~/gg.dot -o ~/zz.png
+shotwell ~/zz.png
+vim ~/gg.dot

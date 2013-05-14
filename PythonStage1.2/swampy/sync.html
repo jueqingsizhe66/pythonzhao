@@ -1,0 +1,121 @@
+<head>
+<title>Swampy: Sync</title>
+</head>
+
+<body bgcolor=#99FF99 fgcolor=#006600 link="#6600ff">
+
+<table width=600 cellpadding=20>
+
+<tr>
+
+<td>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+<h1>Sync</h1>
+
+Sync is a thread simulator used in
+<a href="http://allendowney.com/sync">Synchronization</a>,
+a two-credit (half-class) elective where students solve classical
+(and not-so-classical) synchronization problems using semaphores.
+The class follows the sequence of exercises in
+<a href="http://greenteapress.com/semaphores"><i>The Little
+Book of Semaphores</i></a>, which is a Free Book by the author
+of Swampy.
+
+<p>
+A semaphore is a data structure that can be shared between
+concurrent threads in order to enforce synchronization constraints.
+The most common synchronization constraint is "mutual exclusion",
+in which a critical section of a program is protected so that only
+one thread can execute it concurrently.
+
+<p>
+The following screenshot shows a Sync simulation of two threads using
+a semaphore to enforce exclusive access to an increment operation
+(which is usually not thread-safe):
+
+<p>
+<img src="sync1.png">
+
+
+<p>
+The top three rows show the initialization code that creates a
+Semaphore object named <tt>mutex</tt> and a counter named
+<tt>x</tt>.  The current value of <tt>mutex</tt> is -1, which
+indicates that there is one thread in queue waiting for this
+semaphore.
+
+<p>
+The next four rows show the code the threads are executing.  In
+order to enter the critical section, each thread executes
+<tt>mutex.wait</tt>.  After executing the critical section the
+threads execute <tt>mutex.signal</tt> to indicate that the
+critical section is free.
+
+<p>
+The threads are represented by colored, lettered circles.  Thread A is
+in the critical section; it is just about to execute <tt>x=x+1</tt>.
+Thread B has just executed <tt>mutex.wait</tt>, but because the
+critical section is occupied, Thread B has been moved into the queue.
+When Thread A executes <tt>mutex.signal</tt>, Thread B will be moved
+back into the Run column and allowed to proceed.
+
+<p>
+At the beginning of the semester, students work through a series
+of classical synchronization problems.  For example, this screenshot
+shows a solution to the producer-consumer problem (in this case
+the "buffer" is a coke machine with a capacity of three cokes).
+
+
+<p>
+<img src="sync2.png">
+
+<p>
+The code in these examples is "live" in the sense that students
+can modify it at any time (even while the simulator is running).
+The "Random Run" button simulates a non-deterministic
+scheduler that chooses a runnable thread at random.  Students can
+also click on the thread markers to generate a arbitrary schedule.
+
+<p>
+In most computer science curricula, synchronization is a module in an
+Operating Systems class. OS textbooks present a standard set of
+problems with a standard set of solutions, but most students don't get
+a good understanding of the material or the ability to solve similar
+problems.
+
+<p>
+The goal of Sync is to give students a model of execution for
+multithreaded programs and an environment for testing solutions.  By
+the end of the semester, students are able to solve the most difficult
+synchronization problems; they can also formulate new problems based
+on real-world synchronizations constraints.  Students contributed
+several of the problems in <a
+href="http://greenteapress.com/semaphores"><i>The Little Book of
+Semaphores</i></a>, including the Dining Hall Problem and the Faneuil
+Hall problem.
+
+<p>
+
+
+<p>
+<a href="index.html">
+Back to the Swampy Home Page</a>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+</body>

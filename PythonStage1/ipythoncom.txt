@@ -1,0 +1,19 @@
+sudo apt-get install ipython
+bg pow(2,10)
+print jobs[0].result
+s aux|grep mysql
+
+
+In [3]: cd
+/home/xinran
+
+In [4]: ls
+depthCloseParenthese.pl  gitflow/   Ubuntu One/  模板/	图片/  下载/  桌面/
+examples.desktop	
+
+In [7]: bg pow(2,10)
+Starting job # 0 in a separate thread.
+
+In [8]: print jobs[0].result
+1024
+

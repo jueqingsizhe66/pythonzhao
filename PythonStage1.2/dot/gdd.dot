@@ -1,0 +1,21 @@
+digraph G {
+compound=true;
+subgraph cluster0 {
+    a -> b [ip = 11];
+    a -> c;
+    b -> d;
+    c -> d;
+}
+subgraph cluster1 {
+    e -> g;
+    e -> f;
+}
+b -> f [lhead=cluster1]; //通过ltail and lhead 来改变
+d -> e;
+c -> g [ltail=cluster0,
+lhead=cluster1];
+c -> e [ltail=cluster0];
+d -> h;
+cluster0 -> cluster1// [ltail = 11]; 原来ltail属性是只能为cluster的 
+}
+

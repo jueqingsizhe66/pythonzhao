@@ -1,0 +1,111 @@
+digraph G {
+
+    /*
+    这种方式挺好的  直接前面集体定义
+    graph [
+rankdir = "LR"
+bgcolor = "white:lightblue"
+style="filled"
+gradientangle = 270];
+node [
+fontsize = "16"
+shape = "ellipse"
+style="filled"
+gradientangle=90
+];
+edge [
+];
+    
+    
+    */
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -> a1 -> a2 -> a3;
+		label = "process #1";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -> b1 -> b2 -> b3;
+		label = "process #2";
+		color=blue
+	}
+	start -> a0;
+	start -> b0;
+	a1 -> b3 [label = "a1-b3"];
+	b2 -> a3;
+	a3 -> a0;
+	a3 -> end;
+	b3 -> end;
+
+	start [shape=Mdiamond];
+	end [shape=Msquare];
+    //定义变量的方式  其实就是label功能
+    command [label = "command: dot -Tpng gg.dot -o zz.png" shape = box]
+
+    subgraph cluster_attribute_1{
+
+        node [style =filled];
+        shape -> {box,circle,eclipse,record,Mrecord};
+        "color颜色" -> {".7 .3 1.0",red};
+        style -> {filled,dotted,bold}[style = dotted];
+        color = blue 
+        lable = "attibute table for edge and node"
+    }
+    shape [label = "定义节点的形状"];
+    sides [label = "设置边树 对于多边形"];
+    peripheries [label = "可以设置外框层数"];
+    orientation [label = "可以让节点旋转一个角度"];
+    color [color = crimson,style =filled,label = "定义节点边框的颜色" ,shape =polygon,size =6,orientation =45 ];
+    style [label = "用边框颜色填充节点", shape = house,peripheries =2];
+    rankdir = LR //会影响图形的整体布局！ 从左到右 默认是从上到下:
+    TheAttributeOfNode -> {shape,sides,peripheries,orientation,
+        color,style} [color = "yellow",style=bold];
+
+    abc [shape=none, margin=0, label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+        <TR><TD COLSPAN="3">Linux普遍应用</TD>
+        </TR>
+        <TR><TD>版块</TD><TD>主题数</TD><TD>贴数</TD>
+        </TR>
+        <TR><TD>Linux新手入门及安装配置论坛</TD><TD>58415</TD><TD>222959</TD>
+        </TR>
+        <TR><TD>Linux 服务器应用</TD><TD>18205</TD><TD>64834</TD>
+        </TR>
+        <TR><TD>Linux企业应用</TD><TD>13</TD><TD>76</TD>
+        </TR>
+        <TR><TD>Linux中文化论坛</TD><TD>3426</TD><TD>12134</TD>
+        </TR>
+        </TABLE>>]
+    {rank=same;abc;end}; //设置位置
+    "node1" [
+    label = "<f0> 0xf7fc4380| <f1> | <f2> |-1"
+    shape = "record"
+    fillcolor = "blue:red"
+    gradientangle = 0
+    ];
+     e
+    subgraph clusterA {
+    a -> b;
+    subgraph clusterC {
+      C -> D;
+        }
+     }
+      subgraph clb {
+        d -> f
+      }
+      d -> D
+      e -> clb
+      clusterC -> clb
+    subgraph structs {
+    node [shape=record];
+    struct1 [shape=record,label="<f0> left|<f1> mid\ dle|<f2> right"];
+    struct2 [shape=record,label="<f0> one|<f1> two"];
+    struct3 [shape=record,label="hello\nworld |{ b |{c|<here> d|e}| f}| g | h"];
+    struct1 -> struct2;
+    struct1 -> struct3;
+    }
+
+}

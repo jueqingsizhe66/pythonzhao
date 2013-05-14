@@ -1,0 +1,496 @@
+<head>
+<title>Swampy: Installation Instructions</title>
+</head>
+
+<body>
+
+<table cellpadding=20>
+
+<tr>
+
+<td width=600>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+<h1>Swampy: Installation Instructions</h1>
+
+If you have Python and Tkinter, you
+can <a href="http://pypi.python.org/pypi/swampy/2.1.1"><b>install
+Swampy from the Python Package Index</b></a>.
+
+<p>
+If you need help installing Swampy, Tkinter or Python, see the
+detailed instructions below.  These instructions are a work in
+progress; if you have suggestions for
+improvement, <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#100;&#111;&#119;&#110;&#101;&#121;&#64;&#103;&#114;&#101;&#101;&#110;&#116;&#101;&#97;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">let
+me know</a>.
+
+<p>
+Once you have Swampy installed, try out some of the examples is
+<a href="tutorial.html">this tutorial</a>.
+
+
+<h2>Python 3</h2>
+
+Swampy for Python 3 is not available as a package.  But the source
+code is available in a zip file:
+
+<p>Swampy source for Python 3: 
+<a href="swampy-2.1.python3.zip">swampy-2.1.python3.zip</a>
+
+<p>If you unzip this directory and add it to the Python search path, you
+will be able to import Swampy modules, but instead of specifying the
+package and module like this:
+
+<pre>
+import swampy.TurtleWorld
+</pre>
+
+You would just specify the module, like this:
+
+<pre>
+import TurtleWorld
+</pre>
+
+Swampy for Python 3 is relatively new, so please let me know if
+you run into problems.
+
+
+<h2>Linux</h2>
+
+<ol>
+
+<li><b>Install Python</b>
+
+<p>
+To see if you already have Python, open a terminal
+(Applications->Accessories->Terminal) and type <tt>python</tt> on the
+Linux command line.
+
+You should see something like this:
+
+<pre>
+Python 2.6.4 (r264:75706, Dec  7 2009, 18:45:15)
+>>>
+</pre>
+
+<p>
+If so, you have Python.  If the version number starts with
+2, you have Python 2, which is the version of Python
+used in <i>Think Python</i>.  If the version number starts with 3,
+you have Python 3.  You will not be able to use Swampy with Python 3.
+
+<p>
+To install Python on Ubuntu, run
+
+<pre>
+sudo apt-get install python python-tk
+</pre>
+
+<p>Or for Python 3
+
+<pre>
+sudo apt-get install python python3-tk
+</pre>
+
+<p>
+Or use the Synaptic Package Manager to install "python" and "python-tk".
+
+<p>
+For other distributions, you can find instructions at
+<a href="http://www.python.org/download/">python.org</a>.  You should
+install the latest version of Python 2 (but anything after 2.4 should
+work).
+
+
+<p><li><b>Install Tkinter</b>
+
+<p>
+To see if you have Tkinter, type <tt>python</tt> on the Linux command line.
+Then at the Python prompt, type
+
+<pre>
+>>> import Tkinter
+</pre>
+
+<p>Or in Python 3
+
+<pre>
+>>> import tkinter
+</pre>
+
+<p>
+If you have Tkinter, Python will not print an
+error message and you can go on to the next section.
+
+<p>
+Otherwise you will see something like this:
+
+<pre>
+ImportError: No module named Tkinter
+</pre>
+
+<p>
+In that case, you have to install Tkinter.  On Ubuntu, you can run
+
+<pre>
+sudo apt-get install python-tk
+</pre>
+
+<p>Or for Python 3
+
+<pre>
+sudo apt-get install python python3-tk
+</pre>
+
+Or use the Synaptic Package Manager to install "python-tk".
+
+<p>
+For other distributions, you can get more information from the
+<a href="http://wiki.python.org/moin/TkInter">Tkinter wiki</a>.
+
+
+<p><li><b>Install Swampy</b>
+
+<p>
+To see if you have Swampy, type <tt>python</tt> on the Linux command line.
+Then at the Python prompt, type
+
+<pre>
+>>> import swampy.TurtleWorld
+</pre>
+
+If you have Swampy, Python will not print an
+error message and you are all set.  Enjoy the book!
+
+<p>
+Otherwise you will see something like this:
+
+<pre>
+ImportError: No module named swampy.TurtleWorld
+</pre>
+
+<p>
+In that case, you have to install it.
+Swampy is available from PyPI,
+the <a href="http://pypi.python.org/pypi/swampy/2.1.1">Python Package
+Index</a>.
+
+<p>
+If you use easy_install, you can install it like this:
+
+<pre>
+sudo easy_install swampy
+</pre>
+
+<p>
+If you use pip, you can install it like this:
+
+<pre>
+sudo pip install swampy
+</pre>
+
+<p>
+Otherwise, instructions for installing packages from PyPI
+are <a href="http://wiki.python.org/moin/CheeseShopTutorial">here</a>.
+
+<p>
+If you follow their instructions for Distutils, you might need to know
+how to "extract the distribution."  Download the gzipped tar file
+(with the suffix <tt>.tar.gz</tt>).  Make sure you are in the
+directory where you downloaded the file and type
+
+<pre>
+tar -xzf swampy-*.tar.gz
+</pre>
+
+Then cd into the directory it creates:
+
+<pre>
+cd swampy-x.x.x
+</pre>
+
+You have to replace the x's with the version number, or use tab-completion
+to avoid typing it.
+
+<p>
+Finally, run the installer according to the instructions
+<a href="http://wiki.python.org/moin/CheeseShopTutorial">in the tutorial</a>.
+
+</ol>
+
+
+<h2>Macintosh</h2>
+
+<ol>
+
+<li><b>Install Python</b>
+
+<p>
+According to <a href="http://www.python.org/getit/mac/">python.org</a>,
+
+<blockquote><i>
+Python comes pre-installed on Mac OS X, but due to Apple's release
+cycle, it's often one or even two years old. The overwhelming
+recommendation of the "MacPython" community is to upgrade your Python
+by downloading and installing a newer version from the Python standard
+release page.
+</i></blockquote>
+
+Follow <a href="http://www.python.org/getit/mac/">these
+instuctions</a> to install a current version of Python.  You should
+install the latest version of Python 2 (but anything after 2.4 should
+work).
+
+
+<p><li><b>Install Tkinter</b>
+
+<p>
+To see if you have Tkinter, launch <tt>python</tt>;
+then at the Python prompt, type
+
+<pre>
+>>> import Tkinter
+</pre>
+
+<p>Or in Python 3
+
+<pre>
+>>> import tkinter
+</pre>
+
+<p>
+If you have Tkinter, Python will not print an
+error message and you can go on to the next section.
+
+<p>
+Otherwise you will see something like this:
+
+<pre>
+ImportError: No module named Tkinter
+</pre>
+
+<p>
+In that case, you have to install Tkinter.  You can
+follow <a href="http://www.python.org/getit/mac/tcltk/">these
+instructions</a> from python.org.
+
+
+
+<p><li><b>Install Swampy</b>
+
+<p>
+To see if you have Swampy, launch <tt>python</tt>; then
+at the Python prompt, type
+
+<pre>
+>>> import swampy.TurtleWorld
+</pre>
+
+If you have Swampy, Python will not print an
+error message and you are all set.  Enjoy the book!
+
+<p>
+Otherwise you will see something like this:
+
+<pre>
+ImportError: No module named swampy.TurtleWorld
+</pre>
+
+<p>
+In that case, you have to install it.
+Swampy is available from PyPI,
+the <a href="http://pypi.python.org/pypi/swampy/2.1.1">Python Package
+Index</a>.
+
+<p>
+Instructions for installing packages from PyPI
+are <a href="http://wiki.python.org/moin/CheeseShopTutorial">here</a>.
+
+<p>
+If you follow their instructions for Distutils, you might need to know
+how to "extract the distribution."  Download the gzipped tar file
+(with the suffix <tt>.tar.gz</tt>).  Make sure you are in the
+directory where you downloaded the file and type
+
+<pre>
+tar -xzf swampy-*.tar.gz
+</pre>
+
+Then cd into the directory it creates:
+
+<pre>
+cd swampy-x.x.x
+</pre>
+
+You have to replace the x's with the version number, or use tab-completion
+to avoid typing it.
+
+<p>
+Finally, run the installer according to the instructions
+<a href="http://wiki.python.org/moin/CheeseShopTutorial">in the tutorial</a>.
+
+</ol>
+
+<h2>Windows</h2>
+
+Thanks to Jaymie for help improving these instructions.  If you
+have suggestions for additional improvements, please let me know.
+
+<ol>
+
+<li><b>Install Python</b>
+
+<p>
+For instructions on running Python under Windows, see
+the <a href="http://www.python.org/doc/faq/windows/">Python Windows FAQ</a>.
+
+<p>
+To run Python from the Command Prompt, you need to add the folder that
+contains Python to the list of folders Windows searches for commands.
+The name of the folder is probably <tt>C:\Python26</tt>
+or <tt>C:\Python27</tt>.
+
+<p>
+To add this folder to the search path, select Control panel -> system
+-> advanced -> Environmental Variables -> system variables -> Path.
+Add <tt>C:\Python26</tt> or <tt>C:\Python27</tt> to the end of the
+list (with a semi-colon as a separator).
+
+<p>
+Now if you restart the command window, you should be able to type
+<tt>python</tt> at the prompt and launch Python.
+
+
+<p><li><b>Install Tkinter</b>
+
+<p>
+To see if you have Tkinter, launch <tt>python</tt>;
+then at the Python prompt, type
+
+<pre>
+>>> import Tkinter
+</pre>
+
+<p>Or in Python 3
+
+<pre>
+>>> import tkinter
+</pre>
+
+<p>
+If you have Tkinter, Python will not print an
+error message and you can go on to the next section.
+
+<p>
+Otherwise you will see something like this:
+
+<pre>
+ImportError: No module named Tkinter
+</pre>
+
+<p>
+In that case, you have to install Tkinter.  
+
+You can download the 
+<a href="http://www.activestate.com/activetcl/downloads">ActiveTcl
+Community Edition</a> from ActiveState, which should provide Tkinter.
+
+If that doesn't work, there is more general information about Tkinter
+<a href="http://wiki.python.org/moin/TkInter">here</a>.
+
+
+
+<p><li><b>Install Swampy</b>
+
+<p>
+To see if you have Swampy, launch <tt>python</tt>; then
+at the Python prompt, type
+
+<pre>
+>>> import swampy.TurtleWorld
+</pre>
+
+If you have Swampy, Python will not print an
+error message and you are all set.  Enjoy the book!
+
+<p>
+Otherwise you will see something like this:
+
+<pre>
+ImportError: No module named swampy.TurtleWorld
+</pre>
+
+<p>
+In that case, you have to install it.
+Swampy is available from PyPI,
+the <a href="http://pypi.python.org/pypi/swampy/2.1.1">Python Package
+Index</a>.
+
+<p>
+Right click the file at the bottom of the page and save the file in 
+the site-packages folder (ex: C:\Python23\Lib\site-packages). 
+
+<p>
+Next, right click the .tar.gz file in the folder and click "Extract
+Here" to extract the file in the folder.  The file should create a
+"swampy-2.1.1" folder with all Swampy files.
+
+<p>
+Again, launch Python and see if you can
+import swampy.TurtleWorld.  If so, you are all set.
+
+<p>
+Otherwise, you might have to edit the PYTHONPATH folder to change the
+environment and create a path to the file.  Follow the instructions
+<a href="http://yuji.wordpress.com/2009/08/31/python-on-windows-setting-pythonpath-environment-variable/">here</a>,
+replacing the (c:\folder) with the location of the Swampy folder on
+your computer (most likely
+C:\Python27\Lib\site-packages\swampy-2.1.1).
+
+<p>
+Additional instructions for installing packages from PyPI
+are <a href="http://wiki.python.org/moin/CheeseShopTutorial">here</a>.
+
+</ol>
+
+
+<p>
+<a href="index.html">
+Back to the Swampy Home Page</a>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+
+</td>
+
+<td width=130 valign="top">
+
+<p>
+<h4>Are you using Swampy in a class?</h4>  We'd like to know
+about it.  Please consider filling out <a href="http://spreadsheets.google.com/viewform?formkey=dC0tNUZkMjBEdXVoRGljNm9FRmlTMHc6MA" onClick="javascript: pageTracker._trackPageview('/outbound/survey');">this short survey</a>.
+
+<p><br>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=144933072X&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=B007ECM460&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=1449307116&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=0521725968&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+</td>
+
+</tr>
+</table>
+
+</body>

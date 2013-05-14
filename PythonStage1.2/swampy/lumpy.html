@@ -1,0 +1,179 @@
+<head>
+<title>Lumpy: UML in Python</title>
+</head>
+
+<body bgcolor=#99FF99 fgcolor=#006600 link="#6600ff">
+
+<table width=600 cellpadding=20>
+
+<tr>
+
+<td>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+<h1>Lumpy: UML in Python</h1>
+
+
+<h3><a href="install.html">Download Lumpy</a></h3>
+
+<p>
+Lumpy is a Python module that generates UML diagrams (currently object
+and class diagrams) from a running Python program.  It is similar to a
+graphical debugger in the sense that it generates a visualization of
+the state of a running program, but it is different from a debugger in
+the sense that it tries to generate high-level visualizations that are
+compliant (at least in spirit) with standard UML.
+
+<p>
+There are other tools that generate UML diagrams of Python programs,
+but they are based on analysis of the program text.  Because Lumpy
+works at run time, it is able to extract more information about the
+relationships between classes, especially HAS-A relationships.
+
+<p>
+There are three audiences for this module: teachers, students
+and software engineers.  Teachers can use Lumpy to generate figures
+that demonstrate a model of the execution of a Python program.
+Students can use Lumpy to explore the behavior of the Python
+interpreter.  Software engineers can use Lumpy to extract the
+structure of existing programs by diagramming the relationships among
+the classes, including classes defined in libraries and the Python
+interpreter.
+
+<p>
+As an example, consider the following Python statements:
+
+<pre>
+x = [1, 2, 3]
+y = x
+z = list(x)
+</pre>
+
+<p>
+After these statements execute,
+do x and y refer to the same value?  What about x and z?
+Lumpy shows visually that the answer to the first question is yes,
+and the answer to the second question is no:
+
+<p>
+<img src="lumpy1.png">
+
+<p>
+The green boxes represent the lists.
+The blue box represents a stack frame, which is labelled
+<tt>__main__</tt> because the variables were declared in the top-level
+scope, which is named <tt>__main__</tt>.
+
+<p>
+To use Lumpy, users have to import the Lumpy module and then add a
+few lines to the program they want to visualize.  For example, here
+is the program that generated the previous figure:
+
+<pre>
+# create a Lumpy object and capture reference state
+import Lumpy
+lumpy = Lumpy.Lumpy()
+lumpy.make_reference()
+
+# run the test code
+x = [1, 2, 3]
+y = x
+z = list(x)
+
+# draw the current state (relative to the last ref)
+lumpy.object_diagram()
+</pre>
+
+<p>
+Students can write test code to answer basic questions about
+Python semantics; they can also use Lumpy to instrument their
+own code for debugging.
+Maybe more important, Lumpy helps students develop a model of
+the execution of a program and a language for talking about
+programs and data structures.  
+
+<p>
+Here is a more substantial diagram
+that shows the relationships among the objects in
+<a href="turtle.html">TurtleWorld</a>, 
+which is another component of Swampy.
+
+<p>
+<img src="lumpy2.png">
+
+<p>
+As in the previous diagram, blue boxes are frames and green boxes
+are lists.  Red boxes represent objects and purple boxes represent
+dictionaries (the one above happens to be empty).
+
+<p>
+Lumpy also draws UML class diagrams.
+Here is a class diagram for TurtleWorld.
+
+<p>
+<img src="lumpy3.png"></a>
+
+<p>
+Each class is represented with a box that lists methods, class
+variables and instance variables.  The blue arrows show inheritance
+relationships; the orange arrows show "contains" (or "has-a")
+relationships.
+
+<p>
+Here is the program that generated the previous two examples:
+
+<pre>
+from World import *
+
+import Lumpy
+lumpy = Lumpy.Lumpy()
+lumpy.make_reference()
+
+world = TurtleWorld()
+bob = Turtle(world)
+
+lumpy.object_diagram()
+lumpy.class_diagram()
+</pre>
+
+<p>
+Lumpy uses a simple graph layout algorithm, but it
+gives users the ability to drag and drop diagram components
+to improve readability.
+
+<p>
+Lumpy is reflexive; it is a program that examines and displays its
+own state.  This idea is mind-stretching, and Lumpy is a fun way to
+introduce it to students at an early stage.
+
+
+<h3>Download Lumpy</h3>
+
+Lumpy is part of the Swampy suite; if you want the whole
+suite, here are the 
+<a href="install.html">Installation
+Instructions</a>.  
+If you just want Lumpy, follow
+these <a href="install_lumpy.html">instructions</a> instead.
+
+<p>
+<a href="index.html">
+Back to the Swampy Home Page</a>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+</body>

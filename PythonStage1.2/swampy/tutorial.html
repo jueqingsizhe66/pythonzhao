@@ -1,0 +1,503 @@
+<head>
+<title>Swampy Tutorial</title>
+</head>
+
+<body>
+
+<table width=700 cellpadding=20>
+
+<tr>
+
+<td>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+<h1>Swampy Tutorial</h1>
+
+
+<h3>Check your installation</h3>
+
+<p>
+To see if Swampy is installed correctly, launch the Python interpreter
+and try:
+
+<pre>
+>>> from TurtleWorld import *
+>>> world = TurtleWorld()
+>>> world.mainloop()
+</pre>
+
+<p>
+If that works, you are all set.  Try out some of the other examples
+below.
+
+<p>
+Otherwise, follow <a href="install.html">these instructions</a> to
+install Swampy.
+
+
+<h3>AmoebaWorld</h3>
+
+This example demonstrates how a beginning programmer, who only
+knows how to translate mathematical expressions into Python, can
+use Amoeba world to practice Python syntax and have some fun with
+it. 
+
+<ol>
+
+<li>
+To start AmoebaWorld, move into the directory that contains the
+Swampy code and type
+
+<pre>
+python AmoebaWorld.py
+</pre>
+
+Press the 'Run' button.  You should see something like this:
+
+<p>
+<img src="amoeba0.png">
+
+<p>
+The pink blob is meant to be an Amoeba on a microscope slide.
+The coordinates of the slide run from -10 to 10 in each direction.
+As the Amoeba moves, it leaves a trail of slime in its path.
+Press 'Clear' to erase the slime.
+
+
+<p><li>
+The fields x(t) and y(t) are mathematical expressions that
+control the position of the Amoeba as a function of time.  By
+default, x(t) = y(t) = t, so the Amoeba traces a straight line
+with x = y.
+
+<p>
+Type the expression <tt>10 * math.cos(t)</tt> in the x(t) field,
+and <tt>10 * math.sin(t)</tt> in the y(t) field.  Press 'Run'
+again.  The Amoeba should make a circle.
+
+<p><li>
+As the program runs, debugging information appears in the
+window where you ran the program.  Make sure you can see this
+window before you proceed.
+
+<p>
+Make a deliberate syntax error&#8212;for example, delete the <tt>*</tt> in
+one of the fields&#8212;and press 'Run'.  An error message appears in the
+window where you ran the program.  Swampy displays unvarnished Python
+error messages so that students learn to read them as early as
+possible.
+
+<p><li>
+Press 'Quit' or close the window to exit.
+
+</ol>
+
+<h3>TurtleWorld</h3>
+
+This example demonstrates the path from user to programmer.
+Student use the TurtleWorld GUI to learn the turtle API, then
+run short programs in a text field, then write longer programs
+in separate files.
+
+<ol>
+
+<li>
+To start TurtleWorld, move into the directory that contains the
+Swampy code and type
+
+<pre>
+python TurtleWorld.py
+</pre>
+
+<p><li>
+Press 'Make Turtle'.  A new turtle should appear along with
+a Turtle Control Panel.  Use the buttons to move the turtle
+around the screen:
+
+
+<pre>
+fd      move forward
+bk      make back
+lt	turn left
+rt	turn right
+pu	pen up (don't draw lines)
+pd	pen down
+</pre>
+
+Use the color menu to change the color of the turtle.
+
+<p><li>
+Now press 'Run code' to execute these statements:
+
+<pre>
+world.clear()
+bob = Turtle(world)
+</pre>
+
+The new turtle, bob, doesn't have a control panel.  To
+make him move, you have to write
+code.  For example, modify the program to read  
+
+<pre>
+world.clear()
+bob = Turtle(world)
+for i in range(100):
+    bob.fd(i)
+    bob.lt(i)
+</pre>
+
+<p>
+In Python, spaces and tabs are important, so the last two
+lines have to be indented by the same amount.  You can cut and
+paste from this web page into the text field.
+
+<p>
+Before you press 'Run code', see if you can figure out what
+the turtle will do.  Then try it.  
+
+<p><li>
+The text field is useful for experimenting with short programs,
+but it is better to store long programs in a separate file.
+An example is provided in turtle_code.py.
+
+<p>
+Press 'Clear' to clear the screen, then
+'Run file' to execute turtle_code.py.
+You should see something like this:
+
+<p>
+<img src="turtle0.png">
+
+<p>
+This is a classic example of a recursive function that demonstrates
+the self-similar structure of many natural patterns (in this case,
+cauliflower).
+
+<p><li>
+Press 'Quit' or close the window to exit.
+
+</ol>
+
+The TurtleWorld exercises follow the order of presentation in <a
+href="http://www.greenteapress.com/thinkpython/"><it>How to Think Like
+a Computer Scientist</it></a>, which is a Free Textbook that comes
+with Swampy.
+
+
+<h3>Lumpy</h3>
+
+This example demonstrates the two primary uses of Lumpy: diagramming
+small test programs in order to develop a model of execution, and
+analyzing the structure of a larger program.
+
+<ol>
+
+<li>
+The file lumpy_example1.py uses Lumpy to generate a UML object
+diagram.  It contains the following code:
+
+<pre>
+# create a Lumpy object
+import Lumpy
+lumpy = Lumpy.Lumpy()
+lumpy.make_reference()
+
+# run the test code
+x = [1, 2, 3]
+y = x
+z = list(x)
+
+# draw the current state
+lumpy.object_diagram()
+</pre>
+
+<p>
+To run it, move into the directory that contains the
+Swampy code and type:
+
+<pre>
+python lumpy_example1.py
+</pre>
+
+You should see something like this:
+
+<p>
+<img src="lumpy1.png">
+
+<p>
+The green boxes represent the lists.
+The blue box represents a stack frame, which is labelled
+<tt>__main__</tt> because the variables were declared in the top-level
+scope, which is named <tt>__main__</tt>.
+
+<p>
+Lumpy uses a simple layout algorithm, but it provides drag-and-drop
+capability so the user can fine-tune the appearance of the diagrams.
+Notice that moving a frame also moves the contents of the frame, and
+moving a variable also moves its value.
+
+<p><li>
+To generate a Postscript version of this diagram, press 'Print to file'.
+By default, the diagram is stored in <tt>lumpy.ps</tt>.  You can print
+it or view it with a Postscript viewer.
+
+<p><li> Use a text editor to open lumpy_test.py, and add the following
+code after the line <tt>z = list(x)</tt> (you can cut-and-paste from
+this web page):
+
+<pre>
+d = dict(a=1, b=2, c=3)
+t = d.items()
+</pre>
+
+<p>
+Run lumpy_test.py again.  You should see a diagram showing that
+<tt>d</tt> is a dictionary (purple) that maps the letters a, b and c
+to the numbers 1, 2, 3; and <tt>t</tt> is is list of tuples (dark
+green), where each tuple is an item from the dictionary.
+
+<p><li>
+To see a more substantial example, type
+
+<pre>
+python lumpy_example2.py
+</pre>
+
+<p>
+TurtleWorld should appear, then another window with an object diagram
+showing <tt>bob</tt>, <tt>world</tt>, and the objects and values they
+contain.
+
+<p>
+When you close the object diagram, a class diagram appears.  The
+blue arrows indicate inheritance ("is-a" relationships); the orange
+arrows represent reference ("has-a" relationships).
+
+
+<p><li>
+Normally Lumpy avoids diagramming itself by declaring the Lumpy
+class "opaque", meaning that the contents of a Lumpy object
+are not shown.  In lumpy_example3.py, Lumpy is made
+transparent.  To run it, type
+ 
+<pre>
+python lumpy_example3.py
+</pre>
+
+<p>
+This example demonstrates the limitations of Lumpy's simple
+graph layout algorithm.
+
+</ol>
+
+
+<h3>TurmiteWorld</h3>
+
+This example demonstrates the behavior of a generalized Turing machine
+called Langton's Ant.  It is used to introduce cellular automata, and
+to demonstrate the complex behavior that can come from simple rules.
+
+<ol>
+
+<li>
+To start TurmiteWorld, move into the directory that contains the
+Swampy code and type
+
+<pre>
+python TurmiteWorld.py
+</pre>
+
+Press 'Make Turmite'.  A red triangle should appear, representing
+Langton's Ant, a four-state
+turing machine that lives on a 2-dimensional, 2-state grid.
+During each time step, Langton's Ant follows this program:
+
+
+<ul>
+
+<p>
+<li>If the current cell is yellow, turn right. Otherwise turn left.
+
+<p>
+<li>Toggle the current cell (black becomes yellow and vice versa).
+
+<p>
+<li>Move forward one cell.
+
+</ul>
+
+<p>
+Press 'Step' to see the turmite execute one time step.
+
+<p><li> Press 'Run' to let the turmite run.  The turmite follows a complex and
+unpredictable path for more than 10 000 steps. After that, the turmite
+repeats a sequence of 104 steps, each time shifting by one cell toward
+the upper left corner. The resulting structure is called "the
+highway".
+
+When the turmite gets to the highway, press 'Stop'.
+
+<p><li> The code in the text field creates three turmites facing in
+different directions.  Press 'Clear' and then 'Run code' to execute
+this program.
+
+In this case, one of the turmites finds the highway, but a second turmite
+chases him down, and their interaction put the first turmite in reverse,
+consuming the highway it just built. These two fall into a repeating
+pattern, building and destroying the highway. Meanwhile, the third turmite
+makes his escape.
+
+<p><li>
+While the program is running, press 'Make Turmite' and see what
+effect the fourth turmite has.
+
+<p><li>
+Press 'Quit' or close the window to exit.
+
+</ol>
+
+<h3>Sync</h3>
+
+Sync is a simulator intended for use with <a
+href="http://www.greenteapress.com/semaphores/"><it>The Little Book of
+Semaphores</it></a>, a Free Textbook that comes with Swampy.
+The following examples demonstrate solutions to three of the problems
+in the book.
+
+<ol>
+
+<li>
+Sync.py contains the Sync simulator; mutex.py, readwrite.py and
+coke.py contain scripts Sync can execute.  To load mutex.py into
+the simulator, move into the directory that contains the
+Swampy code and type
+
+<pre>
+python Sync.py mutex.py
+</pre>
+
+You should see something like this:
+
+<p>
+<img src="sync0.png">
+
+<p>
+The first three lines contain initialization code that is executed
+once.  The next four lines contain synchronization code that uses
+a semaphore to ensure exclusive access to the "critical section",
+which contains an increment operation (which is usually not
+thread-safe).
+
+<p>
+The red circle represents a thread.  When a thread is in a
+Run area, it is about to execute the corresponding line of
+code.  When it is in a Queue area, it is waiting for another thread
+to signal the semaphore.
+
+<p><li>
+Press 'Step' four times to see the thread execute the program
+once.  When it finishes, it loops back to the top.
+
+<p><li>
+Press 'Create thread' to make a second thread (synchonization is
+more interesting with more than one thread).  Click on Thread B
+to advance it one step.  You should see something like
+this:
+
+<p>
+<img src="sync00.png">
+
+<p>
+The value of the semaphore is 0, which means that it is locked;
+since Thread B is in the critical section,
+additional threads cannot enter.
+
+<p><li>
+Click on Thread A to make it try to enter the critical section.
+It should move into the Queue area, and decrement the semaphore.
+
+<p><li>
+Click on Thread B three times.  The third time, it leaves
+the critical section, which increments the semaphore and allows
+Thread A to proceed.
+
+<p><li>
+Press 'Random Run'.  The simulator chooses threads at random and
+allows them to run.  If the semaphore is working, there should
+never be more than one thread in the critical section.
+
+<p><li> Edit the line that says <tt>mutex.wait()</tt> so that it says
+<tt>mutex.signal()</tt>.  This is no longer a correct implementation
+of mutual exclusion, since threads don't wait to enter the critical
+section.  Press 'Random Run' again, and the chances are that you will
+soon see more than one thread in the critical section.
+
+<p><li>
+Close the window to exit.
+
+<p><li> 
+Sync comes with other examples in the directory sync_code.
+For example, readwrite.py is a solution
+to the reader-writer problem and coke.py is a solution to 
+the producer-consumer problem (here in the form of a coke machine).
+
+<p>To run these examples, type
+
+<pre>
+python Sync.py sync_code/readwrite.py
+</pre>
+
+<p>Or
+
+<pre>
+python Sync.py sync_code/coke.py
+</pre>
+
+</ol>
+
+
+
+<p>
+<a href="index.html">
+Back to the Swampy Home Page</a>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+
+</td>
+
+<td width=130 valign="top">
+
+<p>
+<h4>Are you using Swampy in a class?</h4>  We'd like to know
+about it.  Please consider filling out <a href="http://spreadsheets.google.com/viewform?formkey=dC0tNUZkMjBEdXVoRGljNm9FRmlTMHc6MA" onClick="javascript: pageTracker._trackPageview('/outbound/survey');">this short survey</a>.
+
+<p><br>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=144933072X&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=B007ECM460&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=1449307116&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=0521725968&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+</td>
+
+</tr>
+</table>
+
+
+
+
+
+</body>

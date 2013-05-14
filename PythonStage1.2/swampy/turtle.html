@@ -1,0 +1,144 @@
+<head>
+<title>Swampy: TurtleWorld</title>
+</head>
+
+<body bgcolor=#99FF99 fgcolor=#006600 link="#6600ff">
+
+<table width=600 cellpadding=20>
+
+<tr>
+
+<td>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+<h1>TurtleWorld</h1>
+
+TurtleWorld is used for about half of the modules in <a
+href="http://allendowney.com/ip04/">Software Design</a>.  It is based
+on <a href="http://en.wikipedia.org/wiki/Turtle_graphics">Logo-like
+turtle graphics</a>.
+
+<p>
+In the <a href="http://allendowney.com/sd06spr/hw01/hw01.html">first assignment</a>,
+students write functions to draw letters of the alphabet.  The
+objective is for students to identify a set of primitive elements that
+can be combined to form letters, then implement the primitives as 
+functions.
+
+<p>
+In the partial solution below, the turtle only knows the letters
+"acefhlnmo".  In a 
+<a href="http://allendowney.com/sd06spr/hw03/hw03.html">later assignment</a>, 
+students write filters that search a dictionary for words that use
+only certain letters.  Here are the longest words this turtle can
+type:
+
+<p>
+<img src="turtle1.png">
+
+<p>
+So in the first assignment, students see one of the important ideas in
+the class: multilevel interface design; that is, design that is based
+on a set of primitives that are used to implement intermediate
+functions, which are used to implement higher-level functions, and so
+on.
+
+<p>
+The <a href="http://allendowney.com/sd06spr/hw02/hw02.html">next assignment</a>
+builds on this idea, introducing generalization (adding parameters to
+make functions more general) and overgeneralization (writing a very
+general function and then writing helper functions that provide
+simpler interfaces to the overgeneralized function).
+
+<p>
+In a <a href="http://allendowney.com/sd06spr/hw06/hw06.html">later homework</a>,
+students teach the turtles to play tag:
+
+<p>
+<img src="turtle2.png">
+
+<p>
+This assignment and the <a href="">next</a> demonstrate two ways
+of managing concurrent agents:
+
+<ul>
+
+<li>In Taggers.py, the World object invokes Turtle.step on each
+Turtle, once per time step.
+
+<p>
+<li>In Threaders.py, each Turtle is controlled by a Thread.
+
+</ul>
+
+<p>
+After using TurtleWorld for a few weeks, students start to read the
+code they have been working with.  In <a
+href="http://allendowney.com/sd06spr/hw09/hw09.html">this exercise</a> students
+write subclasses that inherit from Turtle and TurtleWorld, then add
+new features to both.  This example motivates the use of inheritance
+to extend library code without modifying it.  It is also
+a gentle introduction to event-driven (GUI-based) programming.
+
+<p>
+Here is part of a solution to this exercise:
+
+<p>
+<pre>
+class MyWorld(TurtleWorld):
+    def setup(self):
+
+        # canvas width and height
+        self.ca_width = 400
+        self.ca_height = 400
+
+        # make the canvas
+        self.canvas = self.ca(width=self.ca_width, 
+                              height=self.ca_height,
+                              bg='white')
+
+        # make the buttons
+        self.fr(LEFT, fill=BOTH, expand=1)
+
+        self.bu(LEFT, text='Draw circle', command=self.circle)
+        self.bu(LEFT, text='Quit', command=self.quit)
+
+        self.endfr()
+
+    def circle(self):
+        """this callback is invoked when the user presses 
+        Draw Circle"""
+        ca = self.canvas
+        ca.circle(0, 0, 100, fill='red')
+</pre>
+
+<p>
+These exercises follow the order of presentation
+in <a href="http://greenteapress.com/thinkpython/"><i>How to Think
+Like a Computer Scientist: Learning with Python</i></a>, which was
+written by the author of Swampy with co-authors Jeffrey Elkner and
+Chris Meyers.  The book is available under the GNU Free Documentation
+License.
+
+
+<p>
+<a href="index.html">
+Back to the Swampy Home Page</a>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+</body>

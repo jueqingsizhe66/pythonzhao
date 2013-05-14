@@ -1,0 +1,40 @@
+digraph asde91 {
+ranksep=.75; size = "7.5,7.5";
+{
+node [shape=plaintext, fontsize=16];
+/* the time-line graph */
+past -> "5.1" -> "5.2" -> "5.3" -> "5.3" -> "5.4" -> "5.5" ->
+"5.6" -> "5.7" -> "5.8" -> "5.9" -> "future";
+/* ancestor programs */
+"Bourne sh"; "make"; "SCCS"; "yacc"; "cron"; "Reiser cpp";
+"Cshell"; "emacs"; "build"; "vi"; "<curses>"; "RCS"; "C*";
+}
+{ rank = same;
+"Software IS"; "Configuration Mgt"; "Architecture & Libraries";
+"Process";
+};
+node [shape=box];
+{ rank = same; "past"; "SCCS"; "make"; "Bourne sh"; "yacc"; "cron"; }
+{ rank = same; "5.1"; "Reiser cpp"; "Cshell"; }
+{ rank = same; "5.2"; "build"; "emacs"; "vi"; }
+{ rank = same; "5.3"; "RCS"; "<curses>"; "IMX"; "SYNED"; }
+{ rank = same; "5.3"; "ksh"; "IFS"; "TTU"; }
+{ rank = same; "5.4"; "nmake"; "Peggy"; }
+{ rank = same; "5.5"; "C*"; "ncpp"; "ksh-i"; "<curses-i>"; "PG2"; }
+{ rank = same; "5.6"; "Ansi cpp"; "nmake 2.0"; "3D File System"; "fdelta";
+"DAG"; "CSAS";}
+{ rank = same; "5.7"; "CIA"; "SBCS"; "ksh-88"; "PEGASUS/PML"; "PAX";
+"backtalk"; }
+{ rank = same; "5.8"; "CIA++"; "APP"; "SHIP"; "DataShare"; "ryacc";
+"Mosaic"; }
+{ rank = same; "5.9"; "libft"; "CoShell"; "DIA"; "IFS-i"; "kyacc"; "sfio";
+"yeast"; "ML-X"; "DOT"; }
+{ rank = same; "future"; "Adv. Software Technology"; }
+"PEGASUS/PML" -> "ML-X";
+"SCCS" -> "nmake";
+"SCCS" -> "3D File System";
+"SCCS" -> "RCS";
+"make" -> "nmake";
+"make" -> "build";
+}
+

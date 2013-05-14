@@ -1,0 +1,252 @@
+<head>
+<title>Swampy</title>
+</head>
+
+<body>
+
+<table cellpadding=20>
+
+<tr>
+
+<td valign=top width=140>
+
+<center>
+<img src="lucertola_architetto_fra_01.gif">
+<img src="lucertola_architetto_fra_01.gif">
+<img src="lucertola_architetto_fra_01.gif">
+
+<p>
+<a href="index.html">
+Swampy Home</a>
+
+</center>
+
+</td>
+
+<td width=420>
+
+<h1>Swampy</h1>
+
+<b><a href="install.html">Install Swampy</a></b>
+
+<p>
+Swampy is a suite of Python programs for use with
+<a href="http://thinkpython.com/index.html"><i>Think Python</i></a>,
+<a href="http://thinkpython.com/pythonsd.html"><i>Python for Software Design</i></a>, and
+<a href="http://greenteapress.com/semaphores"><i>The Little Book of
+Semaphores</i></a>.
+
+<p>
+It was written by <a href="https://sites.google.com/site/allendowney/">Allen
+Downey</a> and is available under the GNU General Public License
+(GPL).
+
+<p>
+Swampy includes these components:
+
+<ul type=square>
+
+<li>
+<a href="amoeba.html"><h3>AmoebaWorld</h3></a> Provides a fun
+environment to practice writing Python expressions and to introduce
+object-oriented programming.
+
+<p>
+<li>
+<a href="turtle.html"><h3>TurtleWorld</h3></a>
+An implementation of turtle graphics
+used to teach procedural interface design and
+object-oriented programming.
+
+<p>
+<li>
+<a href="turmite.html"><h3>TurmiteWorld</h3></a>
+Allows students to experiment with
+cellular automata and finite state machines, including
+<a href="http://mathworld.wolfram.com/LangtonsAnt.html">Langton's Ant</a>.
+(The misspelling of "termite" is deliberate; it is a tribute to
+Alan Turing).
+
+<p>
+<li>
+<a href="sync.html"><h3>Sync</h3></a>
+A simulator that
+demonstrates the execution of multithreaded programs that interact
+through Semaphores.  Sync is designed to run the examples and solutions from
+<a href="http://greenteapress.com/semaphores"><i>The Little Book of
+Semaphores</i></a>.
+
+<p>
+<li>
+<a href="lumpy.html"><h3>Lumpy</h3></a>
+Lumpy stands for "UML in Python".
+It generates UML class diagrams and UML object diagrams from a Python
+program.
+
+</ul>
+
+
+<h3>Documentation</h3>
+
+<ul>
+
+<p><li><a href="Gui.html">Gui.html</a>
+
+<p><li><a href="World.html">World.html</a>
+
+<p><li><a href="AmoebaWorld.html">AmoebaWorld.html</a>
+
+<p><li><a href="TurtleWorld.html">TurtleWorld.html</a>
+
+<p><li><a href="CellWorld.html">CellWorld.html</a>
+
+<p><li><a href="TurmiteWorld.html">TurmiteWorld.html</a>
+
+</ul>
+
+
+<p>
+<h3>FAQ</h3>
+
+
+<p>
+<b>What is Swampy for?</b>
+
+<p>
+Swampy provides an environment for a range of exercises related to
+Software Engineering:
+
+<ul>
+
+<li>Lumpy generates UML diagrams, helping student
+understand object-reference semantics and
+software design (especially object-oriented design).
+
+<p>
+<li>AmoebaWorld is used to develop basic programming skills and
+provide a gentle introduction to object-oriented programming.
+
+<p>
+<li>TurtleWorld is used to teach multi-level interface design
+(for example, designing a library of primitive functions and using
+it to implement a higher level library).
+
+<p>
+<li>TurmiteWorld is a sandbox for experimenting with cellular automata
+and finite state machines.
+
+<p>
+<li>Sync is a simulator that provides a model of synchronized
+concurrent threads.
+
+</ul>
+
+These components are used throughout the Engineering with Computing
+(E:C) curriculum at Olin College.
+
+<p>
+<b>What is "Engineering with Computing"?</b>
+
+Engineering with Computing (E:C) is a four-year program in engineering
+with a concentration in computing.
+
+It is described in the <a href="./E:C_FAQ.pdf">E:C FAQ</a>, and
+in our paper
+<a href="downey-stein-fie.pdf">"Designing a
+small-footprint curriculum in computer science"</a>, which appeared
+at FIE 2006. 
+
+
+<p>
+<b>Is Swampy courseware or a programming environment?</b>
+
+<p>
+Both.  In fact, one of the goals of Swampy is to blur the line
+between using software and programming.  AmoebaWorld and TurtleWorld
+take students through a gradual introduction to programming:
+
+<ul>
+
+<li>Initially, students use a graphical user interface to control
+Amoebas and Turtles.  At the same time they are learning the
+elements of the programmer interface for these objects.
+
+<p>
+<li>In AmoebaWorld, students translate mathematical expressions into
+Python in order to control Amoebas.
+
+<p>
+<li>In TurtleWorld, students write program fragments in a GUI and
+execute them by pressing a button.
+
+<p>
+<li>Next, students write longer scripts in separate
+files, but run them through a GUI.
+
+<p>
+<li>Later, students write stand-alone Python programs that import
+Swampy modules.
+
+<p>
+<li>Finally, students use inheritance to modify and extend the
+behavior of Swampy itself.
+
+</ul>
+
+This progression is intended to break down the barrier between
+users and programmers, and demonstrate a wide range of programming
+activities.
+
+
+<p>
+<b>Parts of Swampy seem pretty bare-bones.  Why doesn't it
+have more of the features I expect in a programming environment?</b>
+
+<p>
+Because one of the best ways to learn to program is by reading code,
+so Swampy is designed to be read.  For example, in many places the
+program is written using only the features students have already seen.
+
+<p>
+Swampy is intended to demonstrate a variety of
+patterns in object-oriented design.  In most cases it demonstrates
+what I think is good design, but there are a few weaknesses I
+use as case studies.
+
+<p>
+Swampy is reflexive; that is, it can be used to study itself.
+Lumpy generates UML diagrams that help students understand the
+structure of Swampy, including Lumpy!
+
+<p>
+<b><a href="install.html">Install Swampy</a></b>
+
+
+</td>
+
+<td width=130 valign="top">
+
+<p>
+<h4>Are you using Swampy in a class?</h4>  We'd like to know
+about it.  Please consider filling out <a href="http://spreadsheets.google.com/viewform?formkey=dC0tNUZkMjBEdXVoRGljNm9FRmlTMHc6MA" onClick="javascript: pageTracker._trackPageview('/outbound/survey');">this short survey</a>.
+
+<p><br>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=144933072X&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=B007ECM460&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=1449307116&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<p>
+<iframe src="http://rcm.amazon.com/e/cm?t=greenteapre01-20&o=1&p=8&l=as1&asins=0521725968&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&npa=1&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+</td>
+
+</tr>
+</table>
+
+</body>

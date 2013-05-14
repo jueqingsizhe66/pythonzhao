@@ -1,0 +1,132 @@
+<head>
+<title>Swampy: TurmiteWorld</title>
+</head>
+
+<body bgcolor=#99FF99 fgcolor=#006600 link="#6600ff">
+
+<table width=600 cellpadding=20>
+
+<tr>
+
+<td>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+<h1>TurmiteWorld</h1>
+
+TurmiteWorld is used in <a
+href="http://ece.olin.edu/cm/cm-wiki.cgi">Computational Modeling</a> to
+demonstrate cellular automata
+and finite state machines, including <a
+href="http://mathworld.wolfram.com/LangtonsAnt.html">Langton's
+Ant</a>.  (The misspelling of "termite" is deliberate; it is a tribute
+to Alan Turing).
+
+<p>
+In one of the <a
+href="http://ece.olin.edu/cm/cm-wiki.cgi/HomeworkTen">homeworks</a>,
+students are asked to implement the cellular automaton of their
+choice, starting with some sources for examples.
+Some of the results (with brief descriptions) are available 
+<a href="http://ece.olin.edu/cm/cm-wiki.cgi/HomeWork10Dropbox">here</a>.
+
+<p>
+TurmiteWorld is an implementation of Langton's Ant, a four-state
+turing machine that "lives" on a 2-dimensional, 2-state "tape".
+During each time step, Langton's Ant follows this program:
+
+<ul>
+
+<li>If the current cell is yellow, turn right.  Otherwise turn left.
+
+<li>Toggle the current cell (black becomes yellow and vice versa).
+
+<li>Move forward one cell.
+
+</ul>
+
+<p>
+Since the rules are simple and the world is simple, we expect
+the behavior of the system to be simple, but surprisingly Langton's
+Ant follows a complex and unpredictable path for more than 10 000
+steps.  After that, the ant repeats a sequence of 104 steps, each
+time shifting by one cell toward the upper left corner.  The
+resulting structure is called the "highway".
+
+<p>
+The following screenshot shows the state of the system
+shortly after the ant finds the highway.
+The ant is the red triangle in the upper left.
+
+<p>
+<img src="turmite1.png">
+
+<p>
+The program in the "run this code" entry demonstrates a more
+complicated pattern starting with three Turmites facing in
+different directions.  
+
+<p>
+Here is the code that implements Langton's
+rules:
+
+<pre>
+    def step(self):
+        if self.is_on_mark():
+            self.lt()
+        else:
+            self.rt()
+        self.toggle()
+        self.fd()
+</pre>
+
+Turmite methods are similar to Turtle methods: <tt>lt</tt> stands
+for left turn, <tt>rt</tt> is right turn, and <tt>fd</tt> is forward.
+
+<p>
+One of the features provided by the World class is coordinate
+transformation.  The most useful transformation is called
+CanvasTransform, which converts from standard Cartesian coordinates
+(origin in the middle, positive y axis up) to the graphics coordinates
+used by Tkinter (origin in the upper left, y axis down).  As
+a just-for-fun example, it also provides SwirlTransform, which
+is a simple example of a nonlinear map.
+
+<p>
+Here is what the three-ant example looks like under a SwirlTransform:
+
+<p>
+<img src="turmite2.png">
+
+<p>
+In this case one of the Turmites finds the highway, but a second
+Turmite chases him down, and their interaction put the first Turmite
+in reverse, consuming the highway it just built (in the lower left).
+These two fall into a repeating pattern, building and destroying the
+highway.  Meanwhile, in the upper left, the third Turmite makes his escape.
+
+<p>
+To paraphrase <a
+href="http://en.wikipedia.org/wiki/Stephen_Wolfram">Wolfram</a>,
+simple rules can yield a surprising amount of drama.
+
+<p>
+<a href="index.html">
+Back to the Swampy Home Page</a>
+
+<center>
+<img src="lucertola_architetto_fra_02.gif"><img src="lucertola_architetto_fra_02.gif">
+</center>
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+</body>
