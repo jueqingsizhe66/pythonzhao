@@ -1,4 +1,5 @@
 digraph G {
+    //id仅仅在layer中有运用  而cluster在lhead ltail中有用到！
 
     /*
     这种方式挺好的  直接前面集体定义

@@ -1,0 +1,324 @@
+digraph G {
+	graph [bgcolor=black];	/* set background */
+	edge [color=white];
+	graph[page="50,30",size="50,30",ratio=fill,center=1];
+	node[style=filled,label=""];
+	subgraph TheWhole {
+		rank = same;
+		node[shape=box,color=green];
+		A1 [label = "node",shape = "house"];
+		A2 [label = "edge",shape = "house"];
+		A3 [label = "graph",shape = "house"];
+	}
+	subgraph A1c {
+		rank = same;
+		node[shape=invtriangle,color=red];
+		A11 [label = "color"]; //default:black 
+		A12 [label = "comment"];//any string(format dependent)
+	}
+	subgraph A1d {
+		rank = same;
+		node[shape=invtriangle,color=red];
+        A13 [label = "distoration"]; //default:0.0 node distoration for shape = polygon
+	}
+	subgraph A1f {
+		rank = same;
+		node[shape=hexagon,color=blue];
+        A14 [label = "fillcolor"];//default lightgrey/black  node fill color
+        A15 [label = "fixedsize"];//default false  label text has no affect on node size
+        A16 [label = "fontcolor"];//default black    type face color
+        A17 [label = "fontname"];//default Times-Roman 
+        A18 [label = "fontsize"];//default 14  point size of label
+	}
+	subgraph A1gh {
+		rank = same;
+		node[shape=diamond,color=blue];
+        A19 [label = "group"];//default kong  name of node group
+        A110 [label = "height"]; //default .5  height in inches
+	}
+	subgraph A1l {
+		rank = same;
+		node[shape=box,color=green];
+        A111 [label = "layer", comment="default overlay range"];//all,id or id:id
+        A112 [label = "label"];//node name
+	}
+    
+	subgraph A1opr {
+		rank = same;
+		node[shape=invtrapezium,color=pink];
+        A113 [label = "orientation",comment = "0.0"];//node rotation angle
+        A114 [label = "peripheries",comment = "shape dependent"];//number of node boundaries
+        A115 [label = "regular",comment="false"];//force polygon to be regular
+	}
+	subgraph A1s {
+		rank = same;
+		node[shape=invtriangle,color=red];
+        A116 [label = "shape",comment="ellipse"];//node shape
+        A117 [label = "shapefile"];//external EPSF or SVG custom shape file
+        A118 [label = "sides", comment = "4"];//number of sides for shape=polygon
+        A119 [label = "skew",comment = "0"];//skewing of node for shape =polygon
+        A120 [label = "style"];//graphic option,eg. bold,dotted,filled
+	}
+	subgraph A1uwz {
+		rank = same;
+		node[shape=hexagon,color=blue];
+        A121 [label = "URL", URL = "www.baidu.com"];//URL associated with node
+        A122 [label = "width",comment = ".75"];//width in inches
+        A123 [label = "z", comment = "0.0"]; //z coordinate for VRML ouput
+	}
+	subgraph A2a {
+		rank = same;
+		node[shape=diamond,color=blue];
+        A21 [label = "arrowhead",comment="normal"];//style of arrowhead at head end
+        A22 [label = "arrowsize",comment ="1.0"];//scaling factor for arrowheads
+        A22b [label = "arrowtail",comment = "normal"];//style of arrowtail attail end
+	}
+	subgraph A2c {
+        rank = same;
+		node[shape=box,color=green];
+        A23 [label = "color",comment ="balck"];//edge stoke color
+        A24 [label = "comment"]
+        A25 [label = "constraint",comment = "true"];//use edge to affect the node rank
+	}
+	subgraph A2df {
+		rank = same;
+		node[shape=invtriangle,color=red];
+        A26 [label ="decorate"];//if set,draws a line connected labels with their edges?
+        A27 [label = "dir",comment = "forward"];//forward,back,both or none
+        A28 [label = "fontcolor",comment = "black"];//type face color
+        A29 [label = "fontname",comment = "Times_Roman"];//font family
+        A210 [label = "fontsize",comment = "14"];//point size of label
+        
+    }
+	subgraph A2h {
+		rank = same;
+		node[shape=box,color=green];
+        A211 [label = "headlabel"];//label placed near head of edge
+        A212 [label = "headport"];//n ne | e se | s sw|w  nw
+        A213 [label = "headURL"]; //URL attached to head label if output
+    //format is ismap
+	}
+	subgraph A2l {
+		rank = same;
+		node[shape=invtriangle,color=red];
+        A214 [label = "label"];
+        A215 [label = "labelangle",comment = "-25.0"];//angle in degrees which head or tail label is rotated off the edge
+        A216 [label = "labeldistance",comment = "1.0"];//scaling factor for distance of head or tail label from node
+        A217 [label = "labelfloat",comment = "false"];//lessen constaints onedge label placement
+        A218 [label = "labelfontcolor",comment = "black"];//type face color for head or tail label
+        A219 [label = "labelfontname",comment = "Times-Roman"];
+        A220 [label = "labelfontsize",comment = "14"];
+        A221 [label = "layer", comment = "overlay range"];//all.id or id::id
+        A222 [label = "lhead"];//name of cluster to use as head of edge
+        A223 [label = "ltail"];///name of cluster to use as head of edge
+
+	}
+	subgraph A2ms {
+		rank = same;
+		node[shape=box,color=green];
+        A224 [label = "minlen",comment = "1"];//mininum rank disk between head and tail
+        A225 [label = "samehead"];//tag for head node;  edge heads with the same tag are merged into the same port 
+        A226 [label = "sametail"];//tag for  tail node;  edge tails with the same tag are merged into the same port 
+        A227 [label = "style"]; //graphic options,bold dotted filled
+
+	}
+	subgraph A2tw {
+		rank = same;
+		node[shape=invtriangle,color=red];
+        A228 [label = "taillabel"];//label placed near tail of edge
+        A229 [label = "tailport"];//n ne | e se | s sw|w  nw
+        A230 [label = "tailURL"]; //URL attached to tail label if output
+        A231 [label = "weight",comment = "1"]; //integer cost of streching an edge
+	}
+	subgraph A3bc {
+		rank = same;
+		node[shape=box,peripheries=2];
+        A31 [label = "bgcolor"];//background color for drawing,plus initial fill color
+        A32 [label = "center",comment = "false"];//center drawing on page
+        A33 [label = "clusterrank",comment = "local"];//may be global or none
+        A34 [label = "color",comment = "black"];//for cluster color,outlinecolor and fill color if fillcolor not defined
+        A35 [label = "comment"]
+        A36 [label = "compound",commnet = "false"];//allow edges between clusters
+        A37 [label = "concentrate",comment = "false"];//enables edge concentrators
+	}
+   subgraph A3f {
+		rank = same;
+		node[shape=hexagon,color=blue];
+        A38 [label = "fillcolor"];//default lightgrey/black  node fill color
+        A39 [label = "fontpath"];//list of directories for search font
+        A310 [label = "fontcolor"];//default black    type face color
+        A311 [label = "fontname"];//default Times-Roman 
+        A312 [label = "fontsize"];//default 14  point size of label
+	}
+	subgraph A3lm {
+		rank = same;
+		node[shape=box,color=pink];
+        A313 [label = "label"]
+        A314 [label = "labeljust",comment = "centered"];//"l" "r" for righ-justified cluster label,respectively
+        A315 [label = "labelloc",comment = "top"];//"t" "b" for top- bottom - justified cluster labels.respectivelyf
+        A316 [label = "layers"]; // id  id:id..
+        A317 [label = "margin",comment = "0.5"];//margin include in page,inches
+        A318 [label = "mclimit",comment = "1.0"];//scale factor for mincros iterations
+	}
+	subgraph A3nop {
+		rank =same;
+		node[shape=hexagon,color=blue];
+        A319 [label = "nodesep",comment = ".25"];//separation between nodes inches
+        A320 [label = "nslimit"]; //
+        A321 [label = "ordering"];//if out out edge is preserved
+        A322 [label = "orientation",comment = "portrait"];//if the rotate ifs not used and the value is landscape.use landscape orientation
+        A323 [label = "page"];//unit of pagination,e.g. "8.5,11"
+        A324 [label = "pagedir",comment = "BL"];//traversal order of pages
+
+	}
+	subgraph A3qr {
+		rank = same;
+		node[shape=egg,color=yellow];
+        A325 [label = "quantum"];//
+        A326 [label = "rank"];//same min max,source sink
+        A327 [label = "rankdir",comment = "TB"];//LR  TB
+        A328 [label = "ranksep", comment = ".75"];//separation between ranksin inches
+        A329 [label = "ratio"];//approximatly aspect ratio desired,fill or auto
+        A330 [label = "remincross"];//!!!
+        A331 [label = "rotate"];//if set 90 ,the orientation to landscape
+	}
+	subgraph A3su {
+		rank = same;
+		node[shape=polygon,size = 5,color=blue];
+        A332 [label = "samplepoints",comment = "8"];//numbers of points used to present the ellipses or circles
+        A333 [label = "searchsize",comment = "30"];//o
+        A334 [label = "size"];//maximun drawing size in inches
+        A335 [label = "style"];//grapic options, filled for clusters
+        A336 [label = "URL"];//URL associatied with graph(format dependence)
+
+
+	}
+	
+	subgraph A1edge {
+		edge[style=dotted,dir=none,weight=100];
+//        A1 -> {A11, A12, A13, A14, A15, A16, A17, A18, A19, A110, A111, A112, A113, A114, A115, A116, A117, A118, A119, A120, A121, A122, A123};
+        A1 -> {A11,A12};
+        A12 -> A13;
+        A13 -> {A14,A15,A16,A17,A18};
+        A18 -> {A19,A110};
+        A110 -> {A111,A112};
+        A112 -> {A113,A114,A115};//原来dot识别空格 一定要注意空格！
+        A115 -> {A116,A117,A118,A119,A120};
+        A120 -> {A121,A122,A123};
+	}
+	subgraph A2edge {
+		edge[style=dashed,dir=none];
+        //A2 -> {A21, A22, A23, A24, A25, A26, A27, A28, A29, A210, A211, A212, A213, A214, A215, A216, A217, A218, A219, A220, A221, A222, A223, A224, A225, A226, A227, A228, A229, A230, A231};
+        A2 -> {A21,A22,A22b};
+        A22b -> {A23,A24,A25};
+        A25 -> {A26,A27,A28,A29,A210};
+        A210 -> {A211,A212,A213};
+        A213 -> {A214, A215, A216, A217, A218, A219, A220, A221, A222, A223};
+        A223 -> {A224,A225,A226,A227};
+        A227 -> {A228,A229,A230,A231};
+
+	}
+	subgraph A3edge {
+		edge[style=dashed,dir=none];
+        {rankdir= "TB"}
+        //A3 -> {A31, A32, A33, A34, A35, A36, A37, A38, A39, A310, A311, A312, A313, A314, A315, A316, A317, A318, A319, A320, A321, A322, A323, A324, A325, A326, A327, A328, A329, A330, A331, A332, A333, A334, A335, A336}
+        A3 -> {A31, A32, A33, A34, A35, A36, A37};
+        A37 -> {A38, A39, A310, A311, A312};
+        A312 -> {A313, A314, A315, A316, A317, A318};
+        A318 -> {A319, A320, A321, A322, A323, A324};
+        A324 -> {A325, A326, A327, A328, A329, A330, A331};
+        A331 -> {A332, A333, A334, A335, A336};
+	}
+/*subgraph crossConnection {
+		edge[style=dotted,dir=none];
+		vc3TTP_1_2->xp_1_2->au3CTP_1_2;
+		prTTP_1_2->pu_1_2->prCTP_1_2;
+		prTTP_4_1->pu_4_1->prCTP_4_1;
+		au3CTP_4_1->xp_4_1->au3CTP_4_2;
+		prTTP_4_2->pu_4_2->prCTP_4_2;
+		prTTP_5_1->pu_5_1->prCTP_5_1;
+		vc3TTP_5_1->xp_5_1->au3CTP_5_1;
+	}*/
+    compound=true;
+	//subgraph cluster0 {
+	//	style=filled;
+	//	color=lightgrey;
+	//	node [style=filled,fontcolor=black];
+	//	a0 -> a1 -> a2 -> a3;
+	//	label = "process #1";
+	//}
+    subgraph cluster0 {
+        graph[bgcolor =red ];
+        //可以在里面继续定义 graph  node  edge的独有属性
+        a -> b ;//[ip = 11];
+        a -> c;
+        b -> d;
+        c -> d [label ="rr"];
+    }
+    subgraph cluster1 {
+        graph[bgcolor = blue];
+          e -> g;
+          e -> f;
+    }
+    a -> e [ltail=cluster0,lhead =cluster1];
+    B1 [shape = record, label = "<f0>box|{<f11>circle|<f12>hexagon|{<f13>diamond|<f131>invtrapezium|<f132>triangle|<f133>box}|<f14>doublecircle|<f15>invtriangle}|<f2>ellipese|{<f21>egg|<f22>polygon|<f23>parallelogram}|<f3>point|{<f41>octagon|<f42>tripleoctagon|<f43>invtriangle}"];
+    subgraph cluster_cgrop{
+    edge[color = yellow];
+    graph[bgcolor = pink];
+    B1:f22 -> A13[label = "only used by polygon",labelfontcolor = white];
+    B1:f22 -> A114[label = "only used by polygon",labelfontcolor = white];
+    B1:f22 -> A115[label = "only used by polygon"];
+    B1:f22 -> A118[label = "only used by polygon"];
+    B1:f22 -> A119[label = "only used by polygon"];
+    }
+//    B2 [shape = record,label = "{<f11>whites|{<f12>irory|<f13>ghostwhite|<f14>bisque|<f15>linen|mintcream|oldlace|moccasin|papayawhip|snow|wheat|white|whitesmoke|seashell|navajowhite|lemonchiffon|lavender|floralwhite|azure|antiquewhite|blanchedalmond|cornsilk|honeydew|mistyrose}}|{<f21>Reds|{<f22>coral|<f23>crimson|darksalmon|deeppink|<f25>firebrick|hotpink|lightpink|maroon|mediumvioletred|orangered|palevioletred|pink|red|salmon|tomato|violetred|deeppink}}|{<f31>Yellows|{<f32>darkgoldenrod|<f33>gold|greenyello|lightgoldenrod|lightgoldenrodyellow|lightyellow|palegoldenrod|yellow|yellowgreen}}|{<f41>Blues|{<f42>aliceblue|<f43>blue|blueviolet|cadetblue|comflowerblue|darkslateblue|deepskyblue|dodgerblue|indigo|lightblue|lightskyblue|mediumblue|lightslateblue|mediumslateblue|midnightblue|navy|navyblue|powderblue|royalblue|skyblue|slateblue|steelblue}}|{<f51>Magentas|{<f52>blueviolet|<f53>darkorchid|darkviolet|magenta|mediumorchid|mediumpurple|mediumvioletred|orchid|palevioletred|plum|purple|violet|violetred}}|{<f61>Cyans|{<f62>aquamarine|<f63>cyan|darkturquoise|lightcyan|mediumaquamarine|mediumturquoise|paleturquoise|turquoise}}|{<f71>Browns|{<f72>beige|<f73>brown|<f74>burlywood|<f75>chocolate|peru|rosybrown|tan|khaki|saddlebrown|sandybrown|sienna|darkkhaki}}|{<f81>Blacks|{<f82>black }}|{<f91>Greys|{<f92>darkslategray|<f93>dimgray|<f94>gray|lightgray|lightslategray|slategray}}|{<fA1>Greens|{<fA2>chartreuse|<fA3>darkgreen|darkolivegreen|darkseagreen|forestgreen|green|greenyellow|lawngreen|lightseagreen|limegreen|mediumseagreen|mediumspringgreen|mintcream|olivedrab|palegreen|spinggreen|yellowgreen}}
+//"]
+    A116 -> B1;    
+    B21 [shape = record,label="<f11>whites|{<f12>irory|<f13>ghostwhite|<f14>bisque|<f15>linen|mintcream|oldlace|moccasin|papayawhip|snow|wheat|white|whitesmoke|seashell|navajowhite|lemonchiffon|lavender|floralwhite|azure|antiquewhite|blanchedalmond|cornsilk|honeydew|mistyrose}"];
+    B22 [shape = record,label="<f21>Reds|{<f22>coral|<f23>crimson|darksalmon|deeppink|<f25>firebrick|hotpink|lightpink|maroon|mediumvioletred|orangered|palevioletred|pink|red|salmon|tomato|violetred|deeppink}"];
+    B23 [shape = record,label="<f31>Yellows|{<f32>darkgoldenrod|<f33>gold|greenyello|lightgoldenrod|lightgoldenrodyellow|lightyellow|palegoldenrod|yellow|yellowgreen}"];
+    B24 [shape = record,label=" <f41>Blues|{<f42>aliceblue|<f43>blue|blueviolet|cadetblue|comflowerblue|darkslateblue|deepskyblue|dodgerblue|indigo|lightblue|lightskyblue|mediumblue|lightslateblue|mediumslateblue|midnightblue|navy|navyblue|powderblue|royalblue|skyblue|slateblue|steelblue}"];
+    B25 [shape = record,label="<f51>Magentas|{<f52>blueviolet|<f53>darkorchid|darkviolet|magenta|mediumorchid|mediumpurple|mediumvioletred|orchid|palevioletred|plum|purple|violet|violetred}"];
+    B26 [shape = record,label="<f61>Cyans|{<f62>aquamarine|<f63>cyan|darkturquoise|lightcyan|mediumaquamarine|mediumturquoise|paleturquoise|turquoise}"];
+    B27 [shape = record,label="<f71>Browns|{<f72>beige|<f73>brown|<f74>burlywood|<f75>chocolate|peru|rosybrown|tan|khaki|saddlebrown|sandybrown|sienna|darkkhaki}"];
+    B28 [shape = record,label="<f81>Blacks|{<f82>black }"];
+    B29 [shape = record,label="<f91>Greys|{<f92>darkslategray|<f93>dimgray|<f94>gray|lightgray|lightslategray|slategray}"];
+    B210 [shape = record, label ="<fA1>Greens|{<fA2>chartreuse|<fA3>darkgreen|darkolivegreen|darkseagreen|forestgreen|green|greenyellow|lawngreen|lightseagreen|limegreen|mediumseagreen|mediumspringgreen|mintcream|olivedrab|palegreen|spinggreen|yellowgreen}"];
+    
+    subgraph cluster_cp1{
+    rank = same;
+    B21; B22; 
+    }
+    subgraph cluster_cp1{
+    rank = same;
+     B23;B24;B25
+    }
+    subgraph cluster_cp2{
+    rank = same;
+    B26;B27;
+    }
+    subgraph cluster_cp2{
+    rank = same;
+    B28;B29;B210
+    }
+    subgraph cluster_color{
+    graph [bgcolor = tan];
+    edge [style = bold, color = forestgreen];
+    A11 -> {B21,B22};
+    B21 -> {B23,B24,B25};
+    B22 -> {B26,B27};
+    B27 -> {B28,B29,B210};
+
+
+}
+//    A11-> B2;
+}
+//不支持这种错乱格式的！
+// {<fA1>Greens|{<fA2>chartreuse|<fA3>darkgreen
+   //     |darkolivegreen|darkseagreen|forestgreen
+   //     |green|greenyellow|lawngreen|lightseagreen
+   //     |limegreen|mediumseagreen|mediumspringgreen
+   //     |mintcream|olivedrab|palegreen|spinggreen
+   //     |yellowgreen
+   //     }}
+

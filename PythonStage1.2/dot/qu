@@ -1,0 +1,4 @@
+#!/bin/bash
+dot -Tpng /home/PythonHome/PythonStage1.2/dot/dotlearn.dot -o /home/PythonHome/PythonStage1.2/dot/dotlearn.png
+shotwell /home/PythonHome/PythonStage1.2/dot/dotlearn.png
+vim /home/PythonHome/PythonStage1.2/dot/dotlearn.dot
